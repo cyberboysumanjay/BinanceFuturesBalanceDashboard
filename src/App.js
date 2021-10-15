@@ -37,7 +37,11 @@ export default class App extends Component {
 
   render() {
     const { data, isLoaded } = this.state;
-    var USDTData = data[1];
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].asset === "USDT") {
+        var USDTData = data[i];
+      }
+    }
     if (isLoaded){
       return (
         <div className="App">
